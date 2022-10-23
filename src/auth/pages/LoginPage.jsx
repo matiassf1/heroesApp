@@ -37,7 +37,9 @@ export const LoginPage = () => {
       return
     }
     setUser(formState);
-    navigate('/');
+    navigate('/', {
+      replace: true
+    });
   };
 
   return (

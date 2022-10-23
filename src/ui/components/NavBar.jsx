@@ -5,7 +5,9 @@ export const Navbar = () => {
    const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate('/login')
+    navigate('/login', {
+        replace: true
+    });
 
   }   
 
