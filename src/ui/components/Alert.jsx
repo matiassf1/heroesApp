@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
-import { useAlert } from "../hooks/useAlert";
+import React, { useEffect } from 'react';
+import { useAlert } from '../hooks/useAlert';
 
-export const Alert = React.memo(({children, alert}) => {
+export const Alert = React.memo(({ children, alert, show }) => {
+  const { typeAlert, handleType } = useAlert(alert);
+  useEffect(() => {
+    handleType(alert);
+  }, []);
 
-    const { typeAlert, handleType } = useAlert(alert);
-    useEffect(() => {
-        handleType(alert);
-    }, [])
-    
   return (
-    <>
-      <h3 className={`alert ${typeAlert} text-center w-50 text-uppercase fs-6 text-nowrap mx-auto`} role="alert">{children}</h3> 
-    </>
-  )
+    <div
+      style={{ display: show ? '' : 'none' }}
+      className={`alert ${typeAlert} text-center fs-6 text-nowrap animate__animated animate__fadeIn`}
+      role='alert'>
+      {children}
+    </div>
+  );
 });

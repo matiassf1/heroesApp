@@ -1,42 +1,39 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/UserContext';
-import { useForm } from '../../heroes/hooks';
+import { useForm } from '../../hooks';
 import { Alert } from '../../ui';
+import { AuthContext } from '../context';
 
 export const LoginPage = () => {
-  const [alert, setAlert] = useState('');
+
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [error, setError] = useState(false);
-  const [message, setMessage] = useState('');
-  const { setUser } = useContext(UserContext);
 
   const { email, password, onInputChange, formState, onResetForm } = useForm({
     email: '',
     password: '',
   });
 
-  const navigate = useNavigate();
-
-  const correctUser = {
+  const { email_user, password_user } = {
     email_user: 'random@gmail.com',
     password_user: 'ventana123',
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
-    const { email_user, password_user } = correctUser;
     if (
       formState?.email !== email_user ||
       formState?.password !== password_user
     ){
       setError(true);
-      setMessage('User or password incorrect');
-      setAlert('Error');
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
       onResetForm();
       return
     }
-    setUser(formState);
+    login( 'Matias Sfer' );
     navigate('/', {
       replace: true
     });
@@ -47,8 +44,8 @@ export const LoginPage = () => {
       <h1 className='text-center my-4 text-xl'>
         Login
       </h1>
-
-      {error && <Alert alert={alert}> { message } </Alert>}
+       
+      <div className='w-50 mx-auto'><Alert alert={'Error'} show={error}> User or password incorrect </Alert></div>
 
       <form className='px-5 w-50 mx-auto' onSubmit={handleSubmit} >
         <div className='form-floating mb-3'>

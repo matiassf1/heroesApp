@@ -1,11 +1,8 @@
 import { Navbar } from "../../ui"
 import { Route, Routes, Navigate } from "react-router-dom"
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../pages"
-import { useContext } from "react"
-import { UserContext } from "../../context/UserContext"
 
 export const HeroesRoutes = () => {
-  const { user } = useContext(UserContext);
   return (
     <>
         <Navbar/>
