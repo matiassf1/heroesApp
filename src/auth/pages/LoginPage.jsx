@@ -22,6 +22,7 @@ export const LoginPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (
       formState?.email !== email_user ||
       formState?.password !== password_user
@@ -33,8 +34,11 @@ export const LoginPage = () => {
       onResetForm();
       return
     }
+
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     login( 'Matias Sfer' );
-    navigate('/', {
+    navigate( lastPath, {
       replace: true
     });
   };

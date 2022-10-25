@@ -1,30 +1,30 @@
+import React, { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks";
 import { Alert } from "../../ui/components/Alert";
 import { HeroCard } from "../components";
 import { getHeroesByName } from "../helpers/getHeroesByName";
 
-export const SearchPage = () => {
+export const SearchPage = React.memo(() => {
   const navigate = useNavigate();
-
   const search = useLocation().search;
   const searchParams = new URLSearchParams(search)
 
   const query = searchParams.get('q') || '';
   const heroes = getHeroesByName(query);
 
+  const nameRef = useRef()
+
   const showSearch = (query.length === 0);
   const showError = (query.length > 0) && heroes.length === 0 ;
-
-  console.log(showSearch, showError);
-
-  const {searchText, onInputChange, onResetForm} = useForm({
+  const {searchText, onInputChange} = useForm({
     searchText: query
   });
-
   const onSearchSubmit = async( event ) => {
       event.preventDefault();
       
+      if ( searchText === query) return 
+
       if ( searchText.trim().length <= 1 ) return navigate()
 
       navigate(`?q=${searchText.toLowerCase().trim()}`);
@@ -47,6 +47,7 @@ export const SearchPage = () => {
               placeholder='Search a hero'
               autoComplete='off'
               value={searchText}
+              ref={nameRef}
               onChange={onInputChange}
             />
 
@@ -73,4 +74,4 @@ export const SearchPage = () => {
       </div>
     </>
   );
-};
+})
