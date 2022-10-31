@@ -17,7 +17,7 @@ export const LoginPage = () => {
 
   const { email_user, password_user } = {
     email_user: 'random@gmail.com',
-    password_user: 'ventana123',
+    password_user: 'random123',
   };
 
   const handleSubmit = (event) => {
