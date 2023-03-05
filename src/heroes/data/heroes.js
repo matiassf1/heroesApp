@@ -89,7 +89,7 @@ export const heroes = [
     },
     {
         'id': 'marvel-captain',
-        'superhero':'Captain America', 
+        'superhero':'Cap. America', 
         'publisher':'Marvel Comics', 
         'alter_ego':'Steve Rogers',
         'first_appearance':'Captain America Comics #1',

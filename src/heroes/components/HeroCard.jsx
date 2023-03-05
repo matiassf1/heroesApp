@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const CharactersByActor = ({alter_ego, characters}) => {
-    return alter_ego !== characters ? (<p className="card-item">{characters}</p>) : (<></>)
+    return alter_ego !== characters ? (<p className="card-item text-white">{characters}</p>) : (<></>)
 }
 
 export const HeroCard = ({
@@ -18,12 +18,12 @@ export const HeroCard = ({
    
 
   return (
-    <div className='col  animate__animated animate__fadeIn'>
-        <div className='card'>
+    <div className='col animate__animated animate__fadeIn text-bg-secondary rounded-2'>
+        <div className='card text-bg-secondary' style={{borderStyle:'none'}}>
 
-            <div className="row no-gutters">
+            <div className="row" >
 
-                <div className='col-4'>
+                <div className='col-4 my-auto ml-2'>
 
                     <img src={heroImageUrl} alt={superhero} className='card-img img-fluid' />
 
@@ -37,14 +37,14 @@ export const HeroCard = ({
 
                         <p className="card-item">{ alter_ego }</p>
 
-                        <CharactersByActor alter_ego={alter_ego} characters={characters} />
+                        <CharactersByActor alter_ego={alter_ego} characters={characters}/>
 
                         <p className="card-text">
-                            <small className='text-muted'>{ first_appearance }</small>
+                            <small className=' text-dark'>{ first_appearance }</small>
                         </p>
                         
-                        <Link to={`/hero/${id}`}>
-                            Mas...
+                        <Link to={`/hero/${id}`} className={"link-warning link-opacity-50"}>
+                            More info...
                         </Link>
 
                     </div>
