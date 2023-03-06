@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const CharactersByActor = ({alter_ego, characters}) => {
 
-    const arrayCharacters = characters.split(",");
+    let arrayCharacters = characters.split(",");
 
     if (arrayCharacters.includes(alter_ego)) {
         arrayCharacters = arrayCharacters.filter((value) => value !== alter_ego)
