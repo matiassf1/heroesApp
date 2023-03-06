@@ -8,7 +8,7 @@ const CharactersByActor = ({alter_ego, characters}) => {
         arrayCharacters = arrayCharacters.filter((value) => value !== alter_ego)
     }
     
-    return ( (<p className="card-item text-white">{arrayCharacters[0]}...</p>) )
+    return ( (<p className="card-item text-white">{arrayCharacters[0]}</p>) )
 }
 
 export const HeroCard = ({
