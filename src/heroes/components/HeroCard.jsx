@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 
 const CharactersByActor = ({alter_ego, characters}) => {
-    return alter_ego !== characters ? (<p className="card-item text-white">{characters}</p>) : (<></>)
+
+    const arrayCharacters = characters.split(",")
+    
+    return (alter_ego !== characters ? (<p className="card-item text-white">{arrayCharacters[0]}...</p>) : (<></>))
 }
 
 export const HeroCard = ({
