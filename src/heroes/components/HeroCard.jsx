@@ -25,7 +25,7 @@ export const HeroCard = ({
    
 
   return (
-    <div className='col animate__animated animate__fadeIn text-bg-secondary rounded-2'>
+    <div className='col animate__animated animate__fadeIn text-bg-secondary rounded-2 mb-3'>
         <div className='card text-bg-secondary' style={{borderStyle:'none'}}>
 
             <div className="row" >
