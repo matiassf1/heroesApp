@@ -11,8 +11,8 @@ export const LoginPage = () => {
   const [error, setError] = useState(false);
 
   const { email, password, onInputChange, formState, onResetForm } = useForm({
-    email: '',
-    password: '',
+    email: 'random@gmail.com',
+    password: 'random123',
   });
 
   const { email_user, password_user } = {
@@ -44,7 +44,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className='container-sm pt-4'>
+    <div className='container-sm pt-4' style={{height:'100vh'}}>
       <h1 className='text-center my-4 text-xl'>
         Login
       </h1>

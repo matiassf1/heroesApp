@@ -8,7 +8,7 @@ const CharactersByActor = ({alter_ego, characters}) => {
         arrayCharacters = arrayCharacters.filter((value) => value !== alter_ego)
     }
     
-    return ( (<p className="card-item text-white">{arrayCharacters[0]}</p>) )
+    return ( (<p className="card-item text-dark">{arrayCharacters[0]}</p>) )
 }
 
 export const HeroCard = ({
@@ -25,8 +25,8 @@ export const HeroCard = ({
    
 
   return (
-    <div className='col animate__animated animate__fadeIn text-bg-secondary rounded-2 mb-3'>
-        <div className='card text-bg-secondary' style={{borderStyle:'none'}}>
+    <div className='col animate__animated animate__fadeIn rounded-2 mb-3' style={{backgroundColor:'#F28241'}}>
+        <div className='card' style={{borderStyle:'none', backgroundColor:'#F28241'}}>
 
             <div className="row" >
 
@@ -40,17 +40,17 @@ export const HeroCard = ({
 
                     <div className="card-body">
 
-                        <h5 className="card-title">{superhero}</h5>
+                        <h5 className="card-title text-dark">{superhero}</h5>
 
-                        <p className="card-item">{ alter_ego }</p>
+                        <p className="card-item text-dark">{ alter_ego }</p>
 
                         <CharactersByActor alter_ego={alter_ego} characters={characters}/>
 
                         <p className="card-text">
-                            <small className=' text-dark'>{ first_appearance }</small>
+                            <small className='text-dark'>{ first_appearance }</small>
                         </p>
                         
-                        <Link to={`/hero/${id}`} className={"link-warning link-opacity-50"}>
+                        <Link to={`/hero/${id}`} style={{color:'#F2EFBD'}}>
                             More info...
                         </Link>
 

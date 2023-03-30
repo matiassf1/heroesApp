@@ -31,13 +31,13 @@ export const SearchPage = React.memo(() => {
   }
 
   return (
-    <>
+    <div style={{minHeight:'100vh'}}>
       <h1>Search</h1>
       <hr />
 
       <div className='row'>
         <div className='col-5'>
-          <h4>Searching</h4>
+          <h4>Search a Hero!</h4>
           <hr />
           <form onSubmit={onSearchSubmit}>
             <input
@@ -72,6 +72,6 @@ export const SearchPage = React.memo(() => {
           
         </div>
       </div>
-    </>
+    </div>
   );
 })

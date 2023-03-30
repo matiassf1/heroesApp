@@ -15,7 +15,7 @@ export const Navbar = () => {
 
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-3">
+        <nav className="navbar navbar-expand-sm navbar-dark p-3" style={{backgroundColor:'#F23E16'}}>
             
             <Link 
                 className="navbar-brand" 
@@ -52,7 +52,7 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end ">
                 <ul className="navbar-nav ml-auto">
-                    <span className='nav-link nav-item text-info'>
+                    <span className='nav-link nav-item text-dark'>
                         {user?.name}
                     </span>
 

@@ -7,7 +7,7 @@ import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
   return (
-    <>
+    <div  style={{backgroundColor:'#F2EFBD'}}>
       <Routes>
         
         {/* ONE WAY */}
@@ -37,6 +37,6 @@ export const AppRouter = () => {
           }
         /> 
       </Routes>
-    </>
+    </div>
   );
 };
