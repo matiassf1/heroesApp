@@ -20,10 +20,11 @@ export const HeroPage = () => {
 
   return (
     <div className="row mt-5">
-      <div className="col-4  animate__animated animate__fadeInLeft">
+      <div className="col-4 animate__animated animate__fadeInLeft" style={{backgroundColor:'#F2EFBD'}}>
         <img 
           src={heroImageUrl}
           alt={hero.superhero}
+          style={{border:'none'}}
           className="img-thumbnail rounded-4" />
       </div>
 
@@ -31,14 +32,14 @@ export const HeroPage = () => {
 
         <h2>{hero.superhero}</h2>
 
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item"> <b>Alter ego:</b> {hero.alter_ego} </li>
-          <li className="list-group-item"> <b>Publisher:</b> {hero.publisher} </li>
+        <ul className="list-group list-group-flush rounded-4">
+          <li className="list-group-item mb-1"> <b>Alter ego:</b> {hero.alter_ego} </li>
+          <li className="list-group-item mb-1"> <b>Publisher:</b> {hero.publisher} </li>
           <li className="list-group-item"> <b>First appearance:</b> {hero.first_appearance} </li>
         </ul>
 
         <h5 className="mt-3"> Characters </h5>
-        <p>{ hero.characters }</p>
+        <p className="fst-italic fw-semibold">{ hero.characters }</p>
 
         <button 
           className="btn btn-outline-danger"

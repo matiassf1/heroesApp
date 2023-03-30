@@ -31,7 +31,7 @@ export const SearchPage = React.memo(() => {
   }
 
   return (
-    <div style={{minHeight:'100vh'}}>
+    <div>
       <h1>Search</h1>
       <hr />
 

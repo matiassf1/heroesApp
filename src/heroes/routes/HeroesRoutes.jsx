@@ -4,7 +4,7 @@ import { Navbar } from './Navbar'
 
 export const HeroesRoutes = () => {
   return (
-    <>
+    <div style={{minHeight:'100vh'}}>
         <Navbar/>
 
         <div className="container">
@@ -20,6 +20,6 @@ export const HeroesRoutes = () => {
           </Routes>
         </div>
         
-    </>
+    </div>
   )
 }
